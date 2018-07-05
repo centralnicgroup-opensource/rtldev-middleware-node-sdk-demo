@@ -1,0 +1,54 @@
+{
+  "name": "node-sdk-demo",
+  "version": "1.0.0",
+  "description": "Nodejs SDK Demo App",
+  "private": true,
+  "main": "./dist/app.js",
+  "scripts": {
+    "build": "tsc --version && tsc && npm run lint --silent",
+    "docco": "docco -l parallel -o docs/docco src/*.ts",
+    "lint": "eslint --fix --config=./.eslintrc.js README.md *.json dist/*.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hexonet/node-sdk-demo.git"
+  },
+  "keywords": [
+    "node",
+    "sdk",
+    "demo",
+    "app",
+    "hexonet",
+    "api",
+    "connector"
+  ],
+  "homepage": "https://www.hexonet.net",
+  "maintainers": [
+    {
+      "name": "Kai Schwarz",
+      "email": "kschwarz@hexonet.net"
+    }
+  ],
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/hexonet/node-sdk-demo/issues"
+  },
+  "dependencies": {
+    "express": "4.16.2",
+    "@hexonet/ispapi-apiconnector": "4.4.0"
+  },
+  "devDependencies": {
+    "@types/express": "4.16.0",
+    "eslint": "5.0.1",
+    "eslint-config-standard": "12.0.0-alpha.0",
+    "eslint-plugin-import": "2.13.0",
+    "eslint-plugin-json": "1.2.0",
+    "eslint-plugin-markdown": "1.0.0-beta.6",
+    "eslint-plugin-node": "6.0.1",
+    "eslint-plugin-promise": "3.8.0",
+    "eslint-plugin-standard": "3.1.0",
+    "tslint": "5.10.0",
+    "typescript": "2.9.2"
+  }
+}

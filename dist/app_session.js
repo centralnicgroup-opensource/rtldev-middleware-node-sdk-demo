@@ -14,7 +14,7 @@ apiclient.login(socketparameters, (r, socketcfg) => {
     console.log(' FAILED -> ' + r.CODE + ' ' + r.DESCRIPTION)
     return
   }
-  console.log(' SUCCESS')
+  console.log('SUCCESS')
   const cb = (r2) => {
     console.log('---- API response ----')
     console.dir(r2)
@@ -32,4 +32,4 @@ apiclient.login(socketparameters, (r, socketcfg) => {
     COMMAND: 'StatusUser'
   }, socketcfg, cb, cb)
 })
-// # sourceMappingURL=app.js.map
+// # sourceMappingURL=app_session.js.map

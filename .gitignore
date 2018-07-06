@@ -13,3 +13,4 @@ coverage/
 npm-debug.log*
 .nyc_output/
 docs/
+.vscode/

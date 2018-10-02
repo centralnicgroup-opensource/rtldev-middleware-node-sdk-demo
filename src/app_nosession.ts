@@ -1,21 +1,25 @@
 "use strict";
 
 import * as apiconnector from "@hexonet/ispapi-apiconnector";
-const apiclient = new apiconnector.Client();
-const socketparameters =  {
-    params: {
-      entity: "1234", // OT&E system, use "54cd" for LIVE system
-      login: "test.user", // your user id, here: the OT&E demo user
-      pw: "test.passw0rd", // your user password
-      // user: "...",//can be used to work with a subuser account - optional
-      remoteaddr: "1.2.3.4:80", // optional: provide your remote ip address (use for ip filter)
-    },
-  };
 
-const cb = (r: any) => {
-  console.dir(r);
-};
+async function main() {
+  const cl = new apiconnector.APIClient();
 
-apiclient.request({
-  COMMAND: "StatusAccount",
-}, socketparameters, cb, cb);
+  // choose endpoint system and set credentials
+  cl.useOTESystem();
+  cl.setCredentials("test.user", "test.passw0rd");
+
+  // optional: access on a subuser account
+  // cl.setSubuserView("...");
+
+  // optional: provide your remote ip address (use for ip filter)
+  cl.setRemoteIPAddress("1.2.3.4:80");
+
+  const r = await cl.request({
+    COMMAND: "StatusAccount",
+  });
+  console.dir(r.getPlain());
+  console.dir(r.getHash());
+  console.dir(r.getListHash());
+}
+main();

@@ -1,19 +1,27 @@
 'use strict'
+var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, generator) {
+  return new (P || (P = Promise))(function (resolve, reject) {
+    function fulfilled (value) { try { step(generator.next(value)) } catch (e) { reject(e) } }
+    function rejected (value) { try { step(generator['throw'](value)) } catch (e) { reject(e) } }
+    function step (result) { result.done ? resolve(result.value) : new P(function (resolve) { resolve(result.value) }).then(fulfilled, rejected) }
+    step((generator = generator.apply(thisArg, _arguments || [])).next())
+  })
+}
 Object.defineProperty(exports, '__esModule', { value: true })
 const apiconnector = require('@hexonet/ispapi-apiconnector')
-const apiclient = new apiconnector.Client()
-const socketparameters = {
-  params: {
-    entity: '1234',
-    login: 'test.user',
-    pw: 'test.passw0rd',
-    remoteaddr: '1.2.3.4:80'
-  }
+function main () {
+  return __awaiter(this, void 0, void 0, function * () {
+    const cl = new apiconnector.APIClient()
+    cl.useOTESystem()
+    cl.setCredentials('test.user', 'test.passw0rd')
+    cl.setRemoteIPAddress('1.2.3.4:80')
+    const r = yield cl.request({
+      COMMAND: 'StatusAccount'
+    })
+    console.dir(r.getPlain())
+    console.dir(r.getHash())
+    console.dir(r.getListHash())
+  })
 }
-const cb = (r) => {
-  console.dir(r)
-}
-apiclient.request({
-  COMMAND: 'StatusAccount'
-}, socketparameters, cb, cb)
+main()
 // # sourceMappingURL=app_nosession.js.map

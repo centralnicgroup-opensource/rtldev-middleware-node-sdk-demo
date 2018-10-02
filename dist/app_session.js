@@ -1,35 +1,37 @@
 'use strict'
+var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, generator) {
+  return new (P || (P = Promise))(function (resolve, reject) {
+    function fulfilled (value) { try { step(generator.next(value)) } catch (e) { reject(e) } }
+    function rejected (value) { try { step(generator['throw'](value)) } catch (e) { reject(e) } }
+    function step (result) { result.done ? resolve(result.value) : new P(function (resolve) { resolve(result.value) }).then(fulfilled, rejected) }
+    step((generator = generator.apply(thisArg, _arguments || [])).next())
+  })
+}
 Object.defineProperty(exports, '__esModule', { value: true })
 const apiconnector = require('@hexonet/ispapi-apiconnector')
-const apiclient = new apiconnector.Client()
-const socketparameters = {
-  entity: '1234',
-  login: 'test.user',
-  pw: 'test.passw0rd',
-  remoteaddr: '1.2.3.4:80'
-}
-console.log('login ...')
-apiclient.login(socketparameters, (r, socketcfg) => {
-  if (r.CODE !== '200') {
-    console.log(' FAILED -> ' + r.CODE + ' ' + r.DESCRIPTION)
-    return
-  }
-  console.log('SUCCESS')
-  const cb = (r2) => {
-    console.log('---- API response ----')
-    console.dir(r2)
-    console.log('logout ...')
-    apiclient.logout(socketcfg, (r3) => {
-      if (r3.CODE !== '200') {
-        console.log(' FAILED -> ' + r3.CODE + ' ' + r3.DESCRIPTION)
-        return
+function main () {
+  return __awaiter(this, void 0, void 0, function * () {
+    const cl = new apiconnector.APIClient()
+    cl.useOTESystem()
+    cl.setCredentials('test.user', 'test.passw0rd')
+    cl.setRemoteIPAddress('1.2.3.4:80')
+    let r = yield cl.login()
+    if (r.isSuccess()) {
+      console.log('LOGIN -> SUCCEEDED')
+      r = yield cl.request({
+        COMMAND: 'StatusAccount'
+      })
+      console.dir(r.getHash())
+      r = yield cl.logout()
+      if (r.isSuccess()) {
+        console.log('LOGOUT -> SUCCEEDED')
+      } else {
+        console.log('LOGOUT -> FAILED')
       }
-      console.log(' SUCCESS')
-    })
-  }
-  console.log('requesting user status ...')
-  apiclient.request({
-    COMMAND: 'StatusUser'
-  }, socketcfg, cb, cb)
-})
+    } else {
+      console.log('LOGIN -> FAILED')
+    }
+  })
+}
+main()
 // # sourceMappingURL=app_session.js.map

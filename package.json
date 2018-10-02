@@ -6,7 +6,6 @@
   "main": "./dist/app.js",
   "scripts": {
     "build": "tsc --version && tsc && npm run lint --silent",
-    "docco": "docco -l parallel -o docs/docco src/*.ts",
     "lint": "eslint --fix --config=./.eslintrc.js README.md *.json dist/*.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },

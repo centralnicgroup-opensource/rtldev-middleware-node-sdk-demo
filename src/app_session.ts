@@ -10,7 +10,7 @@ async function main() {
   cl.setCredentials("test.user", "test.passw0rd");
 
   // optional: access on a subuser account
-  // cl.setSubuserView("...");
+  // cl.setUserView("...");
 
   // optional: provide your remote ip address (use for ip filter)
   cl.setRemoteIPAddress("1.2.3.4:80");

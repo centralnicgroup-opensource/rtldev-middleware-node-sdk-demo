@@ -35,7 +35,8 @@
   },
   "dependencies": {
     "@hexonet/ispapi-apiconnector": "5.0.2",
-    "express": "4.16.3"
+    "express": "4.16.3",
+    "extend": ">=3.0.2"
   },
   "devDependencies": {
     "@types/express": "4.16.0",

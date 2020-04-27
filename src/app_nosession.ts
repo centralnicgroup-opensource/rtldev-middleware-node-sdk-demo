@@ -2,7 +2,7 @@
 
 import * as apiconnector from "@hexonet/ispapi-apiconnector";
 
-async function main() {
+async function main(): Promise<any> {
   const cl = new apiconnector.APIClient();
 
   // choose endpoint system and set credentials
@@ -21,5 +21,6 @@ async function main() {
   console.dir(r.getPlain());
   console.dir(r.getHash());
   console.dir(r.getListHash());
+  return r;
 }
 main();

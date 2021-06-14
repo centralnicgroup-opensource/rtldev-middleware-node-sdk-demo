@@ -13,7 +13,6 @@ on:
       - "**"
     tags-ignore: 
       - "**"
-
 jobs:
   test:
     name: Test @ NodeJS LTS - x86 - ubuntu-latest

@@ -1,6 +1,6 @@
 "use strict";
 
-import { APIClient } as apiconnector from "@hexonet/ispapi-apiconnector";
+import { APIClient } from "@hexonet/ispapi-apiconnector";
 
 async function main(): Promise<any> {
   const cl = new APIClient();

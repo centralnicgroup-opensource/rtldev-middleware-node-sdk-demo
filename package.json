@@ -4,6 +4,7 @@
   "description": "Nodejs SDK Demo App",
   "private": true,
   "main": "./dist/app.js",
+  "type": "module",
   "scripts": {
     "build": "tsc --version && tsc",
     "lint": "eslint --fix --ext .ts,.json,.md . src",

@@ -1,9 +1,9 @@
 "use strict";
 
-import * as apiconnector from "@hexonet/ispapi-apiconnector";
+import { APIClient } from "@hexonet/ispapi-apiconnector";
 
 async function main(): Promise<any> {
-  const cl = new apiconnector.APIClient();
+  const cl = new APIClient();
 
   // choose endpoint system and set credentials
   cl.useOTESystem();

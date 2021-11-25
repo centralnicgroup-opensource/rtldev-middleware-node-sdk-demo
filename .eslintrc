@@ -6,15 +6,14 @@
     },
     "parser": "@typescript-eslint/parser",
     "plugins": [
-        "@typescript-eslint",
-        "markdown",
-        "promise"
+        "@typescript-eslint"
     ],
     "extends": [
         "eslint:recommended",
-        "plugin:@typescript-eslint/eslint-recommended",
         "plugin:@typescript-eslint/recommended",
-        "plugin:json/recommended"
+        "plugin:markdown/recommended",
+        "plugin:json/recommended",
+        "plugin:promise/recommended"
     ],
     "rules": {
         "@typescript-eslint/no-explicit-any": 0

@@ -37,7 +37,7 @@
     "url": "https://github.com/hexonet/node-sdk-demo/issues"
   },
   "dependencies": {
-    "@hexonet/ispapi-apiconnector": "^7.0.4",
+    "@hexonet/ispapi-apiconnector": "^8.0.1",
     "express": "^4.17.1"
   },
   "engines": {

@@ -15,4 +15,3 @@ npm-debug.log*
 docs/
 .vscode/
 dist
-package-lock.json

@@ -1,17 +1,17 @@
 name: Release
-on: 
+on:
   # will run for every branch, except tags. See RSRMID-206.
   push:
     # Sequence of patterns matched against refs/heads
     branches:
       - "**"
     # Sequence of patterns matched against refs/tags
-    tags-ignore: 
+    tags-ignore:
       - "**"
   pull_request:
     branches:
       - "**"
-    tags-ignore: 
+    tags-ignore:
       - "**"
 
 jobs:
@@ -30,6 +30,5 @@ jobs:
       - name: Build & Validation
         run: |
           npm ci
-          npm run build
           npm run lint
           npm run test

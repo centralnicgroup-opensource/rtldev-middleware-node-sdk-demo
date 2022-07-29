@@ -1,29 +1,15 @@
 {
-  "compileOnSave": true,
   "compilerOptions": {
-    "lib": ["es2022"],
-    "experimentalDecorators": true,
-    "declaration": true,
-    "declarationMap": true,
-    "inlineSourceMap": true,
-    "inlineSources": true,
-    "module": "es2022",
-    "moduleResolution": "node",
-    "noFallthroughCasesInSwitch": true,
-    "noImplicitReturns": true,
-    "noUnusedLocals": true,
-    "noUnusedParameters": true,
-    "outDir": "./dist",
-    "removeComments": true,
-    "strict": true,
-    "target": "es2022",
-    "typeRoots": ["./node_modules/@types/", "./typings/"],
-    "resolveJsonModule": true,
     "esModuleInterop": true,
-    "noEmitOnError": true,
-    "stripInternal": true,
-    "isolatedModules": true
+    "module": "ESNext",
+    "target": "ES2017",
+    "outDir": "./dist",
+    "moduleResolution": "node",
+    "forceConsistentCasingInFileNames": true,
+    "noImplicitReturns": true,
+    "strict": true,
+    "noUnusedLocals": true
   },
-  "include": ["src/**/*.ts", "src/app_nosession.js"],
-  "exclude": ["node_modules", "**/*.spec.ts", "coverage", ".nyc_output", "docs"]
+  "include": ["src/**/*"],
+  "exclude": ["node_modules"]
 }

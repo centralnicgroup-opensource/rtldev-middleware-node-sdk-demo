@@ -6,11 +6,12 @@
   "main": "./dist/app.js",
   "type": "module",
   "scripts": {
-    "build": "tsc --version && tsc",
-    "lint": "eslint --fix --ext .ts,.json,.md,.js . src",
-    "test": "npm run test1 --silent && npm run test2 --silent",
-    "test1": "node --es-module-specifier-resolution=node dist/app_nosession.js",
-    "test2": "node --es-module-specifier-resolution=node dist/app_session.js"
+    "compile": "tsc --version && tsc --declaration",
+    "lint": "prettier --write .",
+    "prepublish": "npm run compile",
+    "test": "npm run compile && npm run test1 --silent && npm run test2 --silent",
+    "test1": "node dist/app_nosession.js",
+    "test2": "node dist/app_session.js"
   },
   "repository": {
     "type": "git",
@@ -37,7 +38,7 @@
     "url": "https://github.com/hexonet/node-sdk-demo/issues"
   },
   "dependencies": {
-    "@hexonet/ispapi-apiconnector": "^8.0.2",
+    "@hexonet/ispapi-apiconnector": "^9.0.0",
     "express": "^4.17.1"
   },
   "engines": {

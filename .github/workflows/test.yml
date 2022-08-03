@@ -1,32 +1,37 @@
 name: Release
+
 on:
-  # will run for every branch, except tags. See RSRMID-206.
   push:
-    # Sequence of patterns matched against refs/heads
     branches:
       - "**"
-    # Sequence of patterns matched against refs/tags
-    tags-ignore:
-      - "**"
+
   pull_request:
-    branches:
-      - "**"
-    tags-ignore:
-      - "**"
+    types:
+      - opened
+      - synchronize
 
 jobs:
   test:
     name: Test @ NodeJS LTS - x86 - ubuntu-latest
-    if: github.event_name == 'pull_request' || (github.event_name == 'push' && github.actor != 'dependabot[bot]')
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
         uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
       - name: Setup NodeJS LTS
         uses: actions/setup-node@v3
         with:
           node-version: lts/*
           check-latest: true
+      - name: Lint Code Base
+        uses: github/super-linter/slim@v4
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}              
+          DEFAULT_BRANCH: master
+          VALIDATE_ALL_CODEBASE: true
+          VALIDATE_TYPESCRIPT_ES: true         
+          FILTER_REGEX_INCLUDE: "/src/*"       
       - name: Build & Validation
         run: |
           npm ci

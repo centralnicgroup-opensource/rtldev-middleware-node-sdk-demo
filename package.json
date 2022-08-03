@@ -6,8 +6,8 @@
   "main": "./dist/app.js",
   "type": "module",
   "scripts": {
-    "compile": "tsc --version && tsc --declaration",
-    "lint": "prettier --write .",
+    "compile": "tsc --version && tsc --declaration --project tsconfig.json",
+    "prettier": "prettier --write .",
     "prepublish": "npm run compile",
     "test": "npm run compile && npm run test1 --silent && npm run test2 --silent",
     "test1": "node dist/app_nosession.js",
@@ -47,14 +47,6 @@
   },
   "devDependencies": {
     "@types/express": "^4.17.11",
-    "@typescript-eslint/eslint-plugin": "^5.31.0",
-    "@typescript-eslint/parser": "^5.31.0",
-    "eslint": "^8.20.0",
-    "eslint-plugin-import": "^2.18.2",
-    "eslint-plugin-json": "^3.1.0",
-    "eslint-plugin-markdown": "^3.0.0",
-    "eslint-plugin-node": "^11.0.0",
-    "eslint-plugin-promise": "^6.0.0",
     "prettier": "^2.7.1",
     "typescript": "^4.7.4"
   }

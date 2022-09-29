@@ -2,7 +2,7 @@
 
 Nodejs SDK Demo App
 
-See [Example 1: session-based communication](https://github.com/hexonet/node-sdk-demo/blob/master/src/app_session.ts) and [Example 2: sessionless communication](https://github.com/hexonet/node-sdk-demo/blob/master/src/app_session.ts).
+See [Example 1: session-based communication](https://github.com/centralnicgroup-opensource/rtldev-middleware-node-sdk-demo/blob/master/src/app_session.ts) and [Example 2: sessionless communication](https://github.com/centralnicgroup-opensource/rtldev-middleware-node-sdk-demo/blob/master/src/app_session.ts).
 
 Feel free to give it a try:
 

@@ -15,7 +15,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/hexonet/node-sdk-demo.git"
+    "url": "git+https://github.com/centralnicgroup-opensource/rtldev-middleware-node-sdk-demo.git"
   },
   "keywords": [
     "node",
@@ -35,7 +35,7 @@
   ],
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/hexonet/node-sdk-demo/issues"
+    "url": "https://github.com/centralnicgroup-opensource/rtldev-middleware-node-sdk-demo/issues"
   },
   "dependencies": {
     "@hexonet/ispapi-apiconnector": "^9.0.0",

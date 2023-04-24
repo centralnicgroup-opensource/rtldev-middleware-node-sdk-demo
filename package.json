@@ -45,7 +45,7 @@
     "npm": ">=8.11.1"
   },
   "devDependencies": {
-    "prettier": "^2.8.7",
+    "prettier": "^2.8.8",
     "typescript": "^5.0.4"
   }
 }

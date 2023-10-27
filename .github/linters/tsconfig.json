@@ -9,5 +9,8 @@
     "noImplicitReturns": true,
     "strict": true,
     "noUnusedLocals": true
-  }
+  },
+  "lib": [
+    "ES2017"
+  ]
 }

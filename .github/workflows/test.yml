@@ -6,7 +6,9 @@ on:
 jobs:
   test:
     name: 🧪 Testing
-    runs-on: ubuntu-latest
+    runs-on: ${{ vars.RTLDEV_MW_CI_OS }}
+    permissions:
+      contents: read
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -15,12 +17,12 @@ jobs:
       - name: Setup NodeJS LTS
         uses: actions/setup-node@v4
         with:
-          node-version: lts/*
+          node-version: ${{ vars.RTLDEV_MW_CI_NODE_VERSION }}
           check-latest: true
       - name: Lint Code Base
         uses: github/super-linter/slim@v5
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}              
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           DEFAULT_BRANCH: master
           VALIDATE_ALL_CODEBASE: true
           VALIDATE_TYPESCRIPT_ES: true         

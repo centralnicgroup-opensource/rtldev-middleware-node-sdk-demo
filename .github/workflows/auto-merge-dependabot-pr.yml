@@ -23,7 +23,7 @@ jobs:
     steps:
       - name: Enable auto-merge for Dependabot PRs
         # No exceptions, NODE-SDK is the only dependency we have
-        run: gh pr merge --auto --merge "$PR_URL"
+        run: gh pr merge --auto -d -r "$PR_URL"
         env:
           PR_URL: ${{github.event.pull_request.html_url}}
-          GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
+          GITHUB_TOKEN: ${{secrets.RTLDEV_MW_CI_TOKEN}}

@@ -1,16 +1,8 @@
 {
+  "extends": "@tsconfig/node-lts/tsconfig.json",
   "compilerOptions": {
-    "esModuleInterop": true,
-    "module": "ESNext",
-    "target": "ES2017",
-    "outDir": "./dist",
-    "moduleResolution": "node",
-    "forceConsistentCasingInFileNames": true,
-    "noImplicitReturns": true,
-    "strict": true,
-    "noUnusedLocals": true
+    "outDir": "./dist"
   },
-  "lib": [
-    "ES2017"
-  ]
+  "include": ["src/**/*"],
+  "exclude": ["node_modules"]
 }

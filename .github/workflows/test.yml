@@ -25,8 +25,8 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           DEFAULT_BRANCH: master
           VALIDATE_ALL_CODEBASE: true
-          VALIDATE_TYPESCRIPT_ES: true         
-          FILTER_REGEX_INCLUDE: "/src/*"       
+          VALIDATE_TYPESCRIPT_ES: true
+          FILTER_REGEX_INCLUDE: "/src/*"
       - name: Build & Validation
         run: |
           npm ci

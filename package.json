@@ -46,7 +46,7 @@
   },
   "devDependencies": {
     "@tsconfig/node20": "^20.1.4",
-    "@types/node": "^20.14.0",
+    "@types/node": "^20.14.1",
     "prettier": "^3.3.0",
     "typescript": "^5.2.2"
   }

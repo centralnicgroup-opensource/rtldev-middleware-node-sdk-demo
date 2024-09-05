@@ -19,6 +19,7 @@ jobs:
         with:
           node-version: ${{ vars.RTLDEV_MW_CI_NODE_VERSION }}
           check-latest: true
+          cache: "npm"
       - name: Lint Code Base
         uses: github/super-linter/slim@v7
         env:
